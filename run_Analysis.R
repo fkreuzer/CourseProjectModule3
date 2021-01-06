@@ -3,6 +3,7 @@
 library(readr)
 library(stringr)
 library(dplyr)
+library(tibble)
 
 #define filepaths
 
@@ -64,6 +65,24 @@ Xtrain <- Xtrain[2:562]
 ytest <- read.delim(filepath.testy, sep = " ",header = FALSE)
 ytrain <- read.delim(filepath.trainy, sep = " ",header = FALSE)
 
+#change activity labels
+
+ytrain[,1] <- gsub("1","walking",ytrain[[1]])
+ytest[,1] <- gsub("1","walking",ytest[[1]])
+ytrain[,1] <- gsub("2","walking upstairs",ytrain[[1]])
+ytest[,1] <- gsub("2","walking upstairs",ytest[[1]])
+ytrain[,1] <- gsub("3","walking downstairs",ytrain[[1]])
+ytest[,1] <- gsub("3","walking downstairs",ytest[[1]])
+ytrain[,1] <- gsub("4","sitting",ytrain[[1]])
+ytest[,1] <- gsub("4","sitting",ytest[[1]])
+ytrain[,1] <- gsub("5","standing",ytrain[[1]])
+ytest[,1] <- gsub("5","standing",ytest[[1]])
+ytrain[,1] <- gsub("6","laying",ytrain[[1]])
+ytest[,1] <- gsub("6","laying",ytest[[1]])
+
+
+
+
 #read in the subject data
 
 subjecttest <- read.delim(filepath.subjecttest, sep = " ",header = FALSE)
@@ -85,5 +104,22 @@ Xtest <- as_tibble(Xtest)
 Xtrain <- as_tibble(Xtrain)
 
 #add features and results
-Xtest <- mutate(Xtest, y = ytest[1], subject = subjecttest[1])
-Xtrain <- mutate(Xtrain, y = ytrain[1], subject = subjecttrain[1])
+Xtest <- add_column(Xtest, y = ytest[[1]], .before = "tBodyAcc-mean()-X")
+Xtrain <- add_column(Xtrain, y = ytrain[[1]], .before = "tBodyAcc-mean()-X")
+Xtest <- add_column(Xtest, subject = subjecttest[[1]],
+                    .before = "tBodyAcc-mean()-X")
+Xtrain <- add_column(Xtrain, subject = subjecttrain[[1]],
+                    .before = "tBodyAcc-mean()-X")
+
+#clean up label names
+
+newnames <- gsub("-mean\\(\\)", " Mean", names(Xtrain))
+newnames <- gsub("-std\\(\\)", " Standard Deviation", newnames)
+newnames <- gsub("-", " ", newnames)
+
+names(Xtrain) <- newnames
+names(Xtest) <- newnames
+
+#combine the two datasets
+
+alldata <- rbind(Xtrain,Xtest)
