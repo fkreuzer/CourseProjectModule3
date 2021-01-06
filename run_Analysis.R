@@ -123,3 +123,14 @@ names(Xtest) <- newnames
 #combine the two datasets
 
 alldata <- rbind(Xtrain,Xtest)
+
+#create additional dataset
+
+#activities = c("walking","walking upstairs","walking downstairs","sitting",
+#               "standing","lying")
+
+mean_y <- alldata %>% select(-(subject)) %>% group_by(y) %>% summarize_all(mean)
+
+mean_subject <- alldata %>% select(-(y)) %>% group_by(subject) %>% summarize_all(mean)
+
+
