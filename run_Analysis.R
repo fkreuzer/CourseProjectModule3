@@ -129,12 +129,8 @@ alldata <- rbind(Xtrain,Xtest)
 #activities = c("walking","walking upstairs","walking downstairs","sitting",
 #               "standing","lying")
 
-mean_y <- alldata %>% select(-(subject)) %>% group_by(y) %>% summarize_all(mean)
-mean_subject <- alldata %>% select(-(y)) %>% group_by(subject) %>% summarize_all(mean)
+meandata <- alldata %>% group_by(y,subject) %>% summarize_all(mean)
 
-mean_y <- rename(mean_y, subjectoractivity = y)
-mean_subject <- rename(mean_subject, subjectoractivity = subject)
 
-meandata <- rbind(mean_y,mean_subject)
 
 write.table(meandata,"./meandata.txt",row.name=FALSE)
