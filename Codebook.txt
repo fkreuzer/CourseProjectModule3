@@ -1,0 +1,120 @@
+
+Codebook
+=============
+
+The features in this dataset are a subset of the complete set of features from the dataset :
+
+==================================================================
+Human Activity Recognition Using Smartphones Dataset
+Version 1.0
+==================================================================
+Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
+Smartlab - Non Linear Complex Systems Laboratory
+DITEN - Universit‡ degli Studi di Genova.
+Via Opera Pia 11A, I-16145, Genoa, Italy.
+activityrecognition@smartlab.ws
+www.smartlab.ws
+==================================================================
+
+Below you will find a complete list of all the features (and their updated names) that have been considered in this dataset. They are all either the mean values or the Standard Deviation of the variables measured in the experiment by Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
+
+Following is an explanation of all the variable names, taken directly from the codebook of the original data set
+
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+
+Features list
+=============
+
+
+ tBodyAcc  Mean X
+ tBodyAcc  Mean Y
+ tBodyAcc  Mean Z
+ tBodyAcc Standard Deviation X
+ tBodyAcc Standard Deviation Y
+ tBodyAcc Standard Deviation Z
+
+ tGravityAcc  Mean X
+ tGravityAcc  Mean Y
+ tGravityAcc  Mean Z
+ tGravityAcc Standard Deviation X
+ tGravityAcc Standard Deviation Y
+ tGravityAcc Standard Deviation Z
+
+ tBodyAccJerk  Mean X
+ tBodyAccJerk  Mean Y
+ tBodyAccJerk  Mean Z
+ tBodyAccJerk Standard Deviation X
+ tBodyAccJerk Standard Deviation Y
+ tBodyAccJerk Standard Deviation Z
+
+ tBodyGyro  Mean X
+ tBodyGyro  Mean Y
+ tBodyGyro  Mean Z
+ tBodyGyro Standard Deviation X
+ tBodyGyro Standard Deviation Y
+ tBodyGyro Standard Deviation Z
+
+ tBodyGyroJerk  Mean X
+ tBodyGyroJerk  Mean Y
+ tBodyGyroJerk  Mean Z
+ tBodyGyroJerk Standard Deviation X
+ tBodyGyroJerk Standard Deviation Y
+ tBodyGyroJerk Standard Deviation Z
+
+ tBodyAccMag  Mean
+ tBodyAccMag Standard Deviation
+
+ tGravityAccMag  Mean
+ tGravityAccMag Standard Deviation
+
+ tBodyAccJerkMag  Mean
+ tBodyAccJerkMag Standard Deviation
+
+ tBodyGyroMag  Mean
+ tBodyGyroMag Standard Deviation
+
+ tBodyGyroJerkMag  Mean
+ tBodyGyroJerkMag Standard Deviation
+
+ fBodyAcc  Mean X
+ fBodyAcc  Mean Y
+ fBodyAcc  Mean Z
+ fBodyAcc Standard Deviation X
+ fBodyAcc Standard Deviation Y
+ fBodyAcc Standard Deviation Z
+
+ fBodyAccJerk  Mean X
+ fBodyAccJerk  Mean Y
+ fBodyAccJerk  Mean Z
+ fBodyAccJerk Standard Deviation X
+ fBodyAccJerk Standard Deviation Y
+ fBodyAccJerk Standard Deviation Z
+
+ fBodyGyro  Mean X
+ fBodyGyro  Mean Y
+ fBodyGyro  Mean Z
+ fBodyGyro Standard Deviation X
+ fBodyGyro Standard Deviation Y
+ fBodyGyro Standard Deviation Z
+
+
+ fBodyAccMag  Mean
+ fBodyAccMag Standard Deviation
+
+ fBodyBodyAccJerkMag  Mean
+ fBodyBodyAccJerkMag Standard Deviation
+
+ fBodyBodyGyroMag  Mean
+ fBodyBodyGyroMag Standard Deviation
+
+ fBodyBodyGyroJerkMag  Mean
+ fBodyBodyGyroJerkMag Standard Deviation
+
